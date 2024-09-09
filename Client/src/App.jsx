@@ -95,8 +95,8 @@ function App() {
         </div>
 
 
-        <div className="your_todos border-2 border-black  bg-purple-300 md:w-[60vw] min-h-[50vh] rounded-xl my-2">
-
+        <div className="your_todos border-2 border-black bg-purple-300 md:w-[60vw] min-h-[50vh] max-h-[50vh]
+         overflow-y-scroll scrollbar-thin scrollbar-thumb-violet-400 scrollbar-track-gray-300 rounded-xl my-2">
           {
             docs.map((doc) => {
               {
