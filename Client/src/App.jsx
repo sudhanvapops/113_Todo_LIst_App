@@ -1,4 +1,4 @@
-import { useState,useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import { useForm } from "react-hook-form"
 import Navbar from './components/Navbar'
 import Todo from './components/Todo'
@@ -78,7 +78,7 @@ function App() {
 
       <div className='flex flex-col items-center select-none border-2 border-black md:my-5 min-h-[100vh] md:min-h-[80vh] bg-purple-400 md:w-[75%] mx-auto md:rounded-3xl '>
 
-        <div className='Todo_top_Bar border-2 border-black  bg-violet-500 my-5 w-[70%] font-bold text-2xl flex justify-center p-4 rounded-3xl text-white gap-6 '>
+        <div className='Todo_top_Bar border-2  border-black  bg-violet-500 my-5 w-[70%] font-bold text-2xl flex justify-center p-4 rounded-3xl text-white gap-6 '>
           <img src={logo} alt="" className='h-8' />
           <h2 className='font-Ballo_Bhai'>Todo List</h2>
         </div>
@@ -95,14 +95,20 @@ function App() {
         </div>
 
 
-        <div className="your_todos border-2 border-black  bg-purple-300 md:w-[60vw] min-h-[50vh] rounded-xl my-2 ">
-          <div className="todos">
+        <div className="your_todos border-2 border-black  bg-purple-300 md:w-[60vw] min-h-[50vh] rounded-xl my-2">
 
+          {
+            docs.map((doc) => {
+              {
+                return (
+                  <div className="todo">
+                    <Todo desc={doc.todo} key={doc._id} _id={doc._id} fetchdocs={fetch_docs} setdocs={setDocs} setValue={setValue} setFocus={setFocus} setisedit={setisedit} setprev_todo={setprev_todo} isDone={doc.isDone} />
+                  </div>
+                )
+              }
+            })
+          }
 
-            { docs.map((doc) => {
-              return (<Todo desc={doc.todo} key={doc._id} _id={doc._id} fetchdocs={fetch_docs} setdocs={setDocs} setValue={setValue} setFocus={setFocus} setisedit={setisedit} setprev_todo={setprev_todo} isDone={doc.isDone} />)}) }
-            
-          </div>
         </div>
 
       </div>
