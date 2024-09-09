@@ -27,9 +27,10 @@ const Todo = (props) => {
 
   return (
     <div className=' font-bold px-5 py-5 flex justify-between '>
-      <div className='flex items-center gap-2 max-w-2xl text-4xl font-Caveat '>
-        <input type="checkbox" onChange={handleCheck} name="isDone" id={props.id} checked={isDone?true:false} />
-        <label htmlFor={props.id} className={`${isDone?"line-through":""}`} >{props.desc}</label>
+      <div className='flex items-center gap-2 max-w-[50%] md:max-w-2xl text-4xl font-Caveat '>
+        <input type="checkbox" onChange={handleCheck} name="isDone" id={props._id} checked={isDone?true:false} 
+        className="w-4 h-4 rounded text-blue-600 bg-gray-100 border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+        <label htmlFor={props._id} className={`${isDone?"line-through":""}`} >{props.desc}</label>
       </div>
       <div className="btns">
         <button className='bg-purple-600 rounded-xl px-3 py-1 text-xl text-white cursor-pointer mx-1 hover:bg-black hover:scale-105 transition-all ease-in duration-75' onClick={handleEdit}>Edit</button>
