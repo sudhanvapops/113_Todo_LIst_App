@@ -1,8 +1,9 @@
 # Todo App
 
 ## Technologies Used
-- **React JS**
-- **MongoDB** (with Mongoose for database interaction)
+- **React JS** (For Ui)
+- **Node JS with Express** (For Backend)
+- **MongoDB with Mongoose** (For database interaction)
 - **Tailwind CSS** (for styling)
 
 ## Learning Experience
