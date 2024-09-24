@@ -11,7 +11,7 @@ const port = 3000
 app.use(cors())
 app.use(express.json())
 
-let conn = await mongoose.connect('mongodb://localhost:27017/Sigma');
+let conn = await mongoose.connect(process.env.MONGODB_URI);
 
 app.get('/', (req, res) => {
   res.send('Hello World!')  
